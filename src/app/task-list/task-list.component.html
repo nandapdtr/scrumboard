@@ -1,0 +1,17 @@
+<div class="mat-card-container">
+	<div class="mat-card-hldr" ngxDroppable="drop-zone" (drop)="dropped($event)">
+		<mat-card class="material-card ngx-dnd-item" [ngClass]="task.issueType.key" *ngFor="let task of taskData; index as i" [model]="task" ngxDraggable>
+			<mat-card-header>
+				<mat-card-title class="task-title">{{task.title}}</mat-card-title>
+				<span class="spacer"></span>
+				<mat-icon class="material-icon" (click)="editTask(task, i)">edit</mat-icon>
+				<mat-icon class="material-icon" (click)="deleteTask(task, i)">delete</mat-icon>
+			</mat-card-header>
+			<mat-card-content>
+				<p>{{task.description}}</p>
+				<p>{{task.storyPoints}}</p>
+				<p>{{task.issueType.value}}</p>
+			</mat-card-content>
+		</mat-card>
+	</div>
+</div>

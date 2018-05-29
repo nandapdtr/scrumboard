@@ -1,0 +1,44 @@
+.mat-card-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  .mat-card-hldr {
+    flex: 1;
+    position: relative;
+
+    .material-card {
+      margin: 5px;
+      background-color:#fff;
+
+      .task-title{
+        font-weight:bold;
+      }
+
+      .material-icon {
+        margin: 5px;
+        cursor: pointer;
+      }
+
+       p {
+        word-wrap:break-word;
+      }
+    }
+
+    .material-card.bug{
+      background-color:#ef4646;
+    }
+    .material-card.task{
+      background-color:#35d8e6;
+    }
+    .material-card.user-story{
+      background-color:#7dd438;
+    }
+    .material-card.spike{
+      background-color:#ffa500;
+    }
+  }
+}

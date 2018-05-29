@@ -1,0 +1,21 @@
+<div class="app-hldr">
+	<mat-toolbar color="primary">
+		<span>Sample Scrumboard</span>
+	</mat-toolbar>
+	<div class="scrum-board-hldr">
+		<div class="flex-container">
+			<div *ngFor="let header of taskHeaders; first as isFirst">
+				<div class="col-hldr">
+					<mat-toolbar [class]="header">
+						<span>{{header | uppercase}}</span>
+						<span class="spacer"></span>
+						<mat-icon (click)="openPopup()" *ngIf="isFirst">add</mat-icon>
+					</mat-toolbar>
+					<div class="col-body">
+						<app-task-list [taskData]="tasks[header]" [taskStatus]="header" (onDropped)="dropped($event)"></app-task-list>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

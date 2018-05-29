@@ -1,0 +1,115 @@
+$todo-color:#00e3f7;
+$plan-color:#ffa500;
+$develop-color:#aa23f3;
+$test-color:#f77228;
+$deploy-color:#ffba04;
+$done-color:#33f733;
+
+
+.app-hldr {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .scrum-board-hldr {
+    position: relative;
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  .flex-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    > div {
+      position: relative;
+      margin: 10px;
+      width: calc(16.66% - 20px);
+    }
+  }
+  
+  .col-hldr {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+    .todo {
+      background-color:$todo-color;
+    }
+    .plan {
+      background-color:$plan-color;
+    }
+    .develop {
+      background-color:$develop-color;
+    }
+    .test{
+      background-color:$test-color;
+    }
+    .deploy{
+      background-color:$deploy-color;
+    }
+    .done{
+      background-color:$done-color;
+    }
+    .todo,.plan,.develop,.test,.deploy,.done{
+      color:#fff;
+    }
+    .col-body {
+      background-color: #e5e5e5;
+      overflow-y: auto;
+      position: relative;
+      flex: 1;
+      padding: 10px;
+    }
+  }
+  
+  .col-body {
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: #e5e5e5;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: black;
+    }
+  }
+  
+  mat-icon {
+    cursor: pointer;
+  }
+  
+  /* Medium Devices, Desktops */
+  @media only screen and (max-width: 992px) {
+    .flex-container > div {
+      width: calc(33.33% - 20px);
+      height: 400px;
+    }
+  }
+  
+  /* Small Devices, Tablets */
+  @media only screen and (max-width: 768px) {}
+  
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 480px) {
+    .flex-container > div {
+      width: calc(100% - 20px);
+    }
+  }

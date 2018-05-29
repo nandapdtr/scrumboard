@@ -1,0 +1,33 @@
+<div mat-dialog-content class="mat-form">
+	<form class="task-form">
+		<mat-form-field>
+			<input matInput [(ngModel)]="taskData.title" placeholder="Title" name="title" required>
+		</mat-form-field>
+		<mat-form-field>
+			<textarea matInput [(ngModel)]="taskData.description" placeholder="Description" name="description" required></textarea>
+		</mat-form-field>
+		<mat-form-field>
+			<textarea matInput [(ngModel)]="taskData.storyPoints" placeholder="Story Points" name="storyPoints" required></textarea>
+		</mat-form-field>
+		<mat-form-field>
+			<mat-select placeholder="Issue Type" [(ngModel)]="taskData.issueType" name="issueType"(ngModelChange)='onOptionsSelected($event)' required>
+				<mat-option>-- None --</mat-option>
+				<!-- <ng-container *ngFor="let issue of issueTypes"> -->
+					<mat-option *ngFor="let issue of issueTypes" [value]="issue">{{issue.value}}</mat-option>
+				<!-- </ng-container> -->
+				<!-- <mat-option value="Bug">Bug</mat-option>
+				<mat-option value="Task">Task</mat-option>
+				<mat-option value="Spike">Spike</mat-option> -->
+			</mat-select>
+		</mat-form-field>
+	</form>
+</div>
+<div mat-dialog-actions class="mat-btns">
+	<button mat-button (click)="cancel()">Cancel</button>
+	<button mat-button [mat-dialog-close]="taskData">Ok</button>
+</div>
+
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
