@@ -27,8 +27,8 @@ export class TaskEditComponent implements OnInit {
     }
   }
 
-  onOptionsSelected(obj:IssueType){
-    console.log(obj);
+  compareFn(task1: IssueType, task2: IssueType): boolean {
+    return task1 && task2 ? task1.key === task2.key : task1 === task2;
   }
 
   cancel() {

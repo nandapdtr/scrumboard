@@ -1,4 +1,5 @@
 export interface Task {
+    _id?: string,
     taskId: number,
     title: string,
     description: string,
@@ -8,7 +9,7 @@ export interface Task {
 }
 
 export interface TaskObj {
-    todo?: Task[],
+    backlog?: Task[],
     plan?: Task[],
     develop?: Task[],
     test?: Task[],

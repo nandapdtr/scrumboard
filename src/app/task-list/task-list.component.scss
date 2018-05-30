@@ -13,6 +13,7 @@
     .material-card {
       margin: 5px;
       background-color:#fff;
+      padding:10px;
 
       .task-title{
         font-weight:bold;
@@ -29,16 +30,16 @@
     }
 
     .material-card.bug{
-      background-color:#ef4646;
+      border-left:6px solid #ef4646;
     }
     .material-card.task{
-      background-color:#35d8e6;
+      border-left:6px solid #35d8e6;
     }
     .material-card.user-story{
-      background-color:#7dd438;
+      border-left:6px solid #7dd438;
     }
     .material-card.spike{
-      background-color:#ffa500;
+      border-left:6px solid #ffa500;
     }
   }
 }

@@ -42,10 +42,11 @@ export class TaskListComponent implements OnInit, OnChanges, OnDestroy {
       console.log(result);
       if (result) {
         this.taskService.updateTask(result)
-        .pipe(takeUntil(this.unSubscribe)).subscribe(res => {
-          console.log('afterupdate task in mat-card', res);
-          this.taskData[taskInd] = result;
-        });
+          .pipe(takeUntil(this.unSubscribe)).subscribe(res => {
+            console.log('afterupdate task in mat-card', res);
+            this.taskData[taskInd] = result;
+          },
+            error => console.log(error));
       }
     });
   }
@@ -55,10 +56,11 @@ export class TaskListComponent implements OnInit, OnChanges, OnDestroy {
   deleteTask(task: Task, taskInd) {
     console.log(task);
     this.taskService.deleteTask(task)
-    .pipe(takeUntil(this.unSubscribe)).subscribe(result => {
-      console.log(result);
-      this.taskData.splice(taskInd, 1);
-    });
+      .pipe(takeUntil(this.unSubscribe)).subscribe(result => {
+        console.log(result);
+        this.taskData.splice(taskInd, 1);
+      },
+        error => console.log(error));
   }
 
 
@@ -71,15 +73,16 @@ export class TaskListComponent implements OnInit, OnChanges, OnDestroy {
       eventData.value.prevStatus = eventData.value.status;
       eventData.value.status = this.taskStatus;
       this.taskService.updateTask(eventData.value)
-      .pipe(takeUntil(this.unSubscribe)).subscribe(res => {
-        console.log('afterupdate task in mat-card', res);
-        this.onDropped.emit(eventData);
-      });
+        .pipe(takeUntil(this.unSubscribe)).subscribe(res => {
+          console.log('afterupdate task in mat-card', res);
+          this.onDropped.emit(eventData);
+        },
+        error => console.log(error));
     }
   }
 
   //destroy event of this component
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.unSubscribe.next();
     this.unSubscribe.unsubscribe();
   }

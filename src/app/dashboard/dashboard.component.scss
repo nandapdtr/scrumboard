@@ -1,4 +1,4 @@
-$todo-color:#00e3f7;
+$backlog-color:#00e3f7;
 $plan-color:#ffa500;
 $develop-color:#aa23f3;
 $test-color:#f77228;
@@ -52,8 +52,8 @@ $done-color:#33f733;
     display: flex;
     flex-direction: column;
 
-    .todo {
-      background-color:$todo-color;
+    .backlog {
+      background-color:$backlog-color;
     }
     .plan {
       background-color:$plan-color;
@@ -70,7 +70,7 @@ $done-color:#33f733;
     .done{
       background-color:$done-color;
     }
-    .todo,.plan,.develop,.test,.deploy,.done{
+    .backlog,.plan,.develop,.test,.deploy,.done{
       color:#fff;
     }
     .col-body {
@@ -88,7 +88,7 @@ $done-color:#33f733;
       background-color: #e5e5e5;
     }
     &::-webkit-scrollbar-thumb {
-      background-color: black;
+      background-color:#af4e4a;
     }
   }
   

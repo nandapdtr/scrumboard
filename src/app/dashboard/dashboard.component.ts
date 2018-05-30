@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   private unSubscribe: Subject<any> = new Subject();
 
   constructor(private taskService: TaskService, private dialog: MatDialog) {
-    this.taskHeaders = ['todo', 'plan', 'develop', 'test', 'deploy', 'done'];
+    this.taskHeaders = ['backlog', 'plan', 'develop', 'test', 'deploy', 'done'];
     this.tasks = {};
   }
 
@@ -66,11 +66,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
   //Calls service to add new task into database
   addTask(task: Task) {
     task.taskId = Date.now();
-    task.status = 'todo';
+    task.status = 'backlog';
     this.taskService.addTask(task)
     .pipe(takeUntil(this.unSubscribe)).subscribe(result => {
       console.log(result);
-      this.tasks.todo.push(result);
+      this.tasks.backlog.push(result);
     },
       error => console.log(error));
   }
