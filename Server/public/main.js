@@ -112,7 +112,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'app';
+        this.title = 'Sample Scrumboard Application';
     }
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -266,7 +266,7 @@ var CustomMaterialModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"app-hldr\">\n\t<mat-toolbar color=\"primary\">\n\t\t<span>Sample Scrumboard</span>\n\t</mat-toolbar>\n\t<div class=\"scrum-board-hldr\">\n\t\t<div class=\"flex-container\">\n\t\t\t<div *ngFor=\"let header of taskHeaders; first as isFirst\">\n\t\t\t\t<div class=\"col-hldr\">\n\t\t\t\t\t<mat-toolbar [class]=\"header\">\n\t\t\t\t\t\t<span>{{header | uppercase}}</span>\n\t\t\t\t\t\t<span class=\"spacer\"></span>\n\t\t\t\t\t\t<mat-icon (click)=\"openPopup()\" *ngIf=\"isFirst\">add</mat-icon>\n\t\t\t\t\t</mat-toolbar>\n\t\t\t\t\t<div class=\"col-body\">\n\t\t\t\t\t\t<app-task-list [taskData]=\"tasks[header]\" [taskStatus]=\"header\" (onDropped)=\"dropped($event)\"></app-task-list>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>"
+module.exports = "<div class=\"app-hldr\">\r\n\t<mat-toolbar color=\"primary\">\r\n\t\t<span>Sample Scrumboard</span>\r\n\t</mat-toolbar>\r\n\t<div class=\"scrum-board-hldr\">\r\n\t\t<div class=\"flex-container\">\r\n\t\t\t<div *ngFor=\"let header of taskHeaders; first as isFirst\">\r\n\t\t\t\t<div class=\"col-hldr\">\r\n\t\t\t\t\t<mat-toolbar [class]=\"header\">\r\n\t\t\t\t\t\t<span>{{header | uppercase}}</span>\r\n\t\t\t\t\t\t<span class=\"spacer\"></span>\r\n\t\t\t\t\t\t<mat-icon (click)=\"openPopup()\" *ngIf=\"isFirst\">add</mat-icon>\r\n\t\t\t\t\t</mat-toolbar>\r\n\t\t\t\t\t<div class=\"col-body\">\r\n\t\t\t\t\t\t<app-task-list [taskData]=\"tasks[header]\" [taskStatus]=\"header\" (onDropped)=\"dropped($event)\"></app-task-list>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n</div>"
 
 /***/ }),
 
@@ -456,7 +456,7 @@ var LoaderService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div [class.loader-hidden]=\"!show\">\n  <div class=\"loader-overlay\">\n    <div>\n      <mat-spinner *ngIf=\"show\"></mat-spinner>\n    </div>\n  </div>\n</div>"
+module.exports = "<div [class.loader-hidden]=\"!show\">\r\n  <div class=\"loader-overlay\">\r\n    <div>\r\n      <mat-spinner *ngIf=\"show\"></mat-spinner>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -528,7 +528,7 @@ var LoaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form class=\"task-form\" #taskForm=\"ngForm\">\n\t<div mat-dialog-content class=\"mat-form\">\n\t\t<mat-form-field>\n\t\t\t<input matInput [(ngModel)]=\"taskData.title\" placeholder=\"Title\" name=\"title\" required>\n\t\t</mat-form-field>\n\t\t<mat-form-field>\n\t\t\t<textarea matInput [(ngModel)]=\"taskData.description\" placeholder=\"Description\" name=\"description\" required></textarea>\n\t\t</mat-form-field>\n\t\t<mat-form-field>\n\t\t\t<textarea matInput [(ngModel)]=\"taskData.storyPoints\" placeholder=\"Story Points\" name=\"storyPoints\" required></textarea>\n\t\t</mat-form-field>\n\t\t<mat-form-field>\n\t\t\t<mat-select placeholder=\"Issue Type\" [(ngModel)]=\"taskData.issueType\" name=\"issueType\" [compareWith]=\"compareFn\" required>\n\t\t\t\t<mat-option>-- None --</mat-option>\n\t\t\t\t<ng-container *ngFor=\"let issue of issueTypes\">\n\t\t\t\t\t<mat-option *ngFor=\"let issue of issueTypes\" [value]=\"issue\">{{issue.value}}</mat-option>\n\t\t\t\t</ng-container>\n\t\t\t</mat-select>\n\t\t</mat-form-field>\n\t</div>\n\t<div mat-dialog-actions class=\"mat-btns\">\n\t\t<button mat-button (click)=\"cancel()\">Cancel</button>\n\t\t<button mat-button [mat-dialog-close]=\"taskData\" [disabled]=\"taskForm.invalid\">Ok</button>\n\t</div>\n</form>"
+module.exports = "<form class=\"task-form\" #taskForm=\"ngForm\">\r\n\t<div mat-dialog-content class=\"mat-form\">\r\n\t\t<mat-form-field>\r\n\t\t\t<input matInput [(ngModel)]=\"taskData.title\" placeholder=\"Title\" name=\"title\" required>\r\n\t\t</mat-form-field>\r\n\t\t<mat-form-field>\r\n\t\t\t<textarea matInput [(ngModel)]=\"taskData.description\" placeholder=\"Description\" name=\"description\" required></textarea>\r\n\t\t</mat-form-field>\r\n\t\t<mat-form-field>\r\n\t\t\t<textarea matInput [(ngModel)]=\"taskData.storyPoints\" placeholder=\"Story Points\" name=\"storyPoints\" required></textarea>\r\n\t\t</mat-form-field>\r\n\t\t<mat-form-field>\r\n\t\t\t<mat-select placeholder=\"Issue Type\" [(ngModel)]=\"taskData.issueType\" name=\"issueType\" [compareWith]=\"compareFn\" required>\r\n\t\t\t\t<mat-option>-- None --</mat-option>\r\n\t\t\t\t<ng-container *ngFor=\"let issue of issueTypes\">\r\n\t\t\t\t\t<mat-option *ngFor=\"let issue of issueTypes\" [value]=\"issue\">{{issue.value}}</mat-option>\r\n\t\t\t\t</ng-container>\r\n\t\t\t</mat-select>\r\n\t\t</mat-form-field>\r\n\t</div>\r\n\t<div mat-dialog-actions class=\"mat-btns\">\r\n\t\t<button mat-button (click)=\"cancel()\">Cancel</button>\r\n\t\t<button mat-button [mat-dialog-close]=\"taskData\" [disabled]=\"taskForm.invalid\">Ok</button>\r\n\t</div>\r\n</form>"
 
 /***/ }),
 
@@ -614,7 +614,7 @@ var TaskEditComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mat-card-container\">\n\t<div class=\"mat-card-hldr\" ngxDroppable=\"drop-zone\" (drop)=\"dropped($event)\">\n\t\t<mat-card class=\"material-card ngx-dnd-item\" [ngClass]=\"task.issueType.key\" *ngFor=\"let task of taskData; index as i\" [model]=\"task\" ngxDraggable>\n\t\t\t<mat-card-header>\n\t\t\t\t<mat-card-title class=\"task-title\">{{task.title}}</mat-card-title>\n\t\t\t\t<span class=\"spacer\"></span>\n\t\t\t\t<mat-icon class=\"material-icon\" (click)=\"editTask(task, i)\">edit</mat-icon>\n\t\t\t\t<mat-icon class=\"material-icon\" (click)=\"deleteTask(task, i)\">delete</mat-icon>\n\t\t\t</mat-card-header>\n\t\t\t<mat-card-content>\n\t\t\t\t<p>{{task.description}}</p>\n\t\t\t\t<p>{{task.storyPoints}}</p>\n\t\t\t\t<p>{{task.issueType.value}}</p>\n\t\t\t</mat-card-content>\n\t\t</mat-card>\n\t</div>\n</div>"
+module.exports = "<div class=\"mat-card-container\">\r\n\t<div class=\"mat-card-hldr\" ngxDroppable=\"drop-zone\" (drop)=\"dropped($event)\">\r\n\t\t<mat-card class=\"material-card ngx-dnd-item\" [ngClass]=\"task.issueType.key\" *ngFor=\"let task of taskData; index as i\" [model]=\"task\" ngxDraggable>\r\n\t\t\t<mat-card-header>\r\n\t\t\t\t<mat-card-title class=\"task-title\">{{task.title}}</mat-card-title>\r\n\t\t\t\t<span class=\"spacer\"></span>\r\n\t\t\t\t<mat-icon class=\"material-icon\" (click)=\"editTask(task, i)\">edit</mat-icon>\r\n\t\t\t\t<mat-icon class=\"material-icon\" (click)=\"deleteTask(task, i)\">delete</mat-icon>\r\n\t\t\t</mat-card-header>\r\n\t\t\t<mat-card-content>\r\n\t\t\t\t<p>{{task.description}}</p>\r\n\t\t\t\t<p>{{task.storyPoints}}</p>\r\n\t\t\t\t<p>{{task.issueType.value}}</p>\r\n\t\t\t</mat-card-content>\r\n\t\t</mat-card>\r\n\t</div>\r\n</div>"
 
 /***/ }),
 
@@ -761,8 +761,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TaskService", function() { return TaskService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _loader_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./loader.service */ "./src/app/loader.service.ts");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _loader_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./loader.service */ "./src/app/loader.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -772,6 +773,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -787,41 +789,52 @@ var TaskService = /** @class */ (function () {
         this.loaderService = loaderService;
         this.url = 'http://localhost:3000/tasks';
     }
+    //Gets all the tasks from database
     TaskService.prototype.getTasks = function () {
         var _this = this;
         this.loaderService.show();
         return this.http.get(this.url)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () { return _this.hideLoader(); }, function (error) { return _this.hideLoader(); }));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function () { return _this.hideLoader(); }, Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError('getTasks', []))));
     };
+    //adds a tasks to database
     TaskService.prototype.addTask = function (task) {
         var _this = this;
         this.loaderService.show();
         return this.http.post(this.url, task, httpOptions)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () { return _this.hideLoader(); }, function (error) { return _this.hideLoader(); }));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function () { return _this.hideLoader(); }, Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError('addTask', task))));
     };
+    //Updates a task in databaese
     TaskService.prototype.updateTask = function (task) {
         var _this = this;
         this.loaderService.show();
-        console.log('inside update task in task service');
         var url = this.url + "/" + task._id;
-        return this.http.put(url, task)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () { return _this.hideLoader(); }, function (error) { return _this.hideLoader(); }));
+        return this.http.put(url, task, httpOptions)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function () { return _this.hideLoader(); }, Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError('updateTask', task))));
     };
+    //Deletes a task from database
     TaskService.prototype.deleteTask = function (task) {
         var _this = this;
         this.loaderService.show();
         var url = this.url + "/" + task._id;
         return this.http.delete(url)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function () { return _this.hideLoader(); }, function (error) { return _this.hideLoader(); }));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function () { return _this.hideLoader(); }, Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError('deleteTask', task))));
     };
+    //Hides loading indicator
     TaskService.prototype.hideLoader = function () {
         this.loaderService.hide();
+    };
+    //Error Handler
+    TaskService.prototype.handleError = function (operation, result) {
+        this.hideLoader();
+        return function (error) {
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(result);
+        };
     };
     TaskService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], _loader_service__WEBPACK_IMPORTED_MODULE_3__["LoaderService"]])
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], _loader_service__WEBPACK_IMPORTED_MODULE_4__["LoaderService"]])
     ], TaskService);
     return TaskService;
 }());
@@ -890,7 +903,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\KLMAssignment\scrumboard\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! F:\Angular6\scrumboard_branch\scrumboard\src\main.ts */"./src/main.ts");
 
 
 /***/ })
