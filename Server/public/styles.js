@@ -539,7 +539,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\KLMAssignment\scrumboard\src\styles.scss */"./src/styles.scss");
+module.exports = __webpack_require__(/*! F:\Angular6\scrumboard_branch\scrumboard\src\styles.scss */"./src/styles.scss");
 
 
 /***/ })
